@@ -5,10 +5,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  void answerQuestion() {
+    print('anser choosen');
+  }
+
   @override
   Widget build(BuildContext context) {
     var questions = [
-      'What\'s your favrouite colour',
+      'What\'s your favrouite colour?',
       'What\'s is your favrouite animal?',
     ];
     return MaterialApp(
@@ -18,18 +22,20 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Text('The question!'),
+            Text(questions.elementAt(0)),
             RaisedButton(
               child: Text('Answer 1'),
-              onPressed: null,
+              onPressed: answerQuestion,
             ),
             RaisedButton(
               child: Text('Answer 2'),
-              onPressed: null,
+              onPressed: () => print('answer 2 choosen'),
             ),
             RaisedButton(
               child: Text('Answer 3'),
-              onPressed: null,
+              onPressed: () {
+                print('answer 3 choosen');
+              },
             ),
           ],
         ),
